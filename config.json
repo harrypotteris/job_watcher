@@ -13,7 +13,7 @@
   ],
   "max_years": 3,
   "require_visa_outside_india": true,
-  "alert_on_first_run": true,
+  "alert_on_first_run": false,
   "sources": [
     {
       "name": "Adzuna India",
