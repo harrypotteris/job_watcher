@@ -18,11 +18,11 @@
     {
       "name": "Adzuna India",
       "type": "adzuna",
-      "enabled": false,
+      "enabled": true,
       "countries": ["in"],
-      "queries": ["firmware engineer", "embedded software engineer", "embedded intern", "software engineer fresher", "software engineer intern", "graduate engineer trainee", "machine learning engineer", "data scientist fresher"],
+      "queries": ["embedded software engineer", "graduate engineer trainee", "software engineer fresher"],
       "max_days_old": 3,
-      "every_hours": 3
+      "every_hours": 12
     },
     {
       "name": "Adzuna Abroad",
@@ -33,28 +33,134 @@
       "max_days_old": 3,
       "every_hours": 6
     },
+    { "name": "Remotive", "type": "remotive", "category": "software-dev", "every_hours": 6 },
+    { "name": "Arbeitnow", "type": "arbeitnow", "pages": 3, "every_hours": 2 },
+
     {
-      "name": "Remotive",
-      "type": "remotive",
-      "category": "software-dev",
-      "every_hours": 6
+      "name": "Qualcomm", "type": "workday", "host": "qualcomm.wd5.myworkdayjobs.com", "tenant": "qualcomm", "site": "External",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "Arbeitnow",
-      "type": "arbeitnow",
-      "pages": 3,
-      "every_hours": 2
+      "name": "NVIDIA", "type": "workday", "host": "nvidia.wd5.myworkdayjobs.com", "tenant": "nvidia", "site": "NVIDIAExternalCareerSite",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "Qualcomm",
-      "type": "workday",
-      "enabled": false,
-      "host": "qualcomm.wd5.myworkdayjobs.com",
-      "tenant": "qualcomm",
-      "site": "External",
-      "search": ["firmware", "embedded", "intern", "graduate"],
-      "locations": ["india"],
-      "pages": 3
+      "name": "Intel", "type": "workday", "host": "intel.wd1.myworkdayjobs.com", "tenant": "intel", "site": "External",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "AMD", "type": "workday", "host": "amd.wd1.myworkdayjobs.com", "tenant": "amd", "site": "External",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Analog Devices", "type": "workday", "host": "analogdevices.wd1.myworkdayjobs.com", "tenant": "analogdevices", "site": "External",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Micron", "type": "workday", "host": "micron.wd1.myworkdayjobs.com", "tenant": "micron", "site": "External",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "NXP", "type": "workday", "host": "nxp.wd3.myworkdayjobs.com", "tenant": "nxp", "site": "careers",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Marvell", "type": "workday", "host": "marvell.wd1.myworkdayjobs.com", "tenant": "marvell", "site": "MarvellCareers",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Cadence", "type": "workday", "host": "cadence.wd1.myworkdayjobs.com", "tenant": "cadence", "site": "External_Careers",
+      "search": ["embedded", "software engineer", "verification", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Dell", "type": "workday", "host": "dell.wd1.myworkdayjobs.com", "tenant": "dell", "site": "External",
+      "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Adobe", "type": "workday", "host": "adobe.wd5.myworkdayjobs.com", "tenant": "adobe", "site": "external_experienced",
+      "search": ["software engineer", "machine learning", "graduate", "intern"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Salesforce", "type": "workday", "host": "salesforce.wd12.myworkdayjobs.com", "tenant": "salesforce", "site": "External_Career_Site",
+      "search": ["software engineer", "machine learning", "graduate", "intern"], "pages": 3, "every_hours": 3,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+
+    {
+      "name": "Databricks", "type": "greenhouse", "slug": "databricks", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Stripe", "type": "greenhouse", "slug": "stripe", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "MongoDB", "type": "greenhouse", "slug": "mongodb", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Cloudflare", "type": "greenhouse", "slug": "cloudflare", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Datadog", "type": "greenhouse", "slug": "datadog", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Samsara", "type": "greenhouse", "slug": "samsara", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Anduril", "type": "greenhouse", "slug": "anduril", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Applied Intuition", "type": "greenhouse", "slug": "appliedintuition", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Twilio", "type": "greenhouse", "slug": "twilio", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Okta", "type": "greenhouse", "slug": "okta", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Postman", "type": "greenhouse", "slug": "postman", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Elastic", "type": "greenhouse", "slug": "elastic", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Coinbase", "type": "greenhouse", "slug": "coinbase", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+
+    {
+      "name": "Atlassian", "type": "lever", "slug": "atlassian", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "CRED", "type": "lever", "slug": "cred", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
+    },
+    {
+      "name": "Meesho", "type": "lever", "slug": "meesho", "every_hours": 2,
+      "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     }
   ]
 }
