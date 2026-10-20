@@ -310,6 +310,7 @@ def main():
     state = json.loads(SEEN_FILE.read_text()) if SEEN_FILE.exists() else {}
     seen = dict.fromkeys(state.get("seen", []))
     seeded = set(state.get("seeded", []))
+    fresh_start = not seeded
     last_run = state.get("last_run", {})
     now = time.time()
     role_re = word_re(cfg["roles"])
@@ -365,6 +366,9 @@ def main():
         notify([head] + shown + tail)
     for e in errors:
         print("ERROR", e)
+    if fresh_start:  # one-time ping so you know Telegram is wired up
+        notify(["✅ Job watcher is live. Sources checked: "
+                + ", ".join(sorted(seeded)) + ". New matches will show up here."])
 
     if not DRY:
         SEEN_FILE.write_text(json.dumps(
