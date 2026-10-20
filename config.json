@@ -1,30 +1,59 @@
 {
-  "include": ["firmware", "embedded", "intern", "graduate", "new grad", "campus", "bsp", "driver", "uefi", "bios", "hardware", "validation"],
-  "exclude": ["senior", "staff", "principal", "director", "manager", "lead"],
-  "locations": ["india", "bengaluru", "bangalore", "hyderabad", "noida", "pune", "remote"],
+  "roles": [
+    "firmware", "embedded", "bsp", "device driver", "rtos", "fpga", "rtl", "verification", "validation",
+    "software engineer", "software developer", "software development engineer", "sde", "sde1", "sde-1",
+    "systems engineer", "backend", "full stack", "fullstack", "python developer", "c++ developer",
+    "machine learning", "ml engineer", "ai engineer", "deep learning", "computer vision",
+    "data scientist", "data science", "data analyst", "data engineer",
+    "graduate engineer", "graduate trainee", "engineer trainee"
+  ],
+  "exclude_title": [
+    "senior", "sr", "staff", "principal", "lead", "manager", "director", "head", "architect",
+    "vp", "sales", "marketing", "recruiter", "hr", "account", "support specialist", "technician"
+  ],
+  "max_years": 3,
+  "require_visa_outside_india": true,
   "alert_on_first_run": false,
   "sources": [
     {
+      "name": "Adzuna India",
+      "type": "adzuna",
+      "enabled": false,
+      "countries": ["in"],
+      "queries": ["firmware engineer", "embedded software engineer", "embedded intern", "software engineer fresher", "software engineer intern", "graduate engineer trainee", "machine learning engineer", "data scientist fresher"],
+      "max_days_old": 3,
+      "every_hours": 3
+    },
+    {
+      "name": "Adzuna Abroad",
+      "type": "adzuna",
+      "enabled": false,
+      "countries": ["gb", "de", "nl", "ca", "au"],
+      "queries": ["graduate software engineer", "embedded software engineer", "machine learning engineer", "software engineer intern"],
+      "max_days_old": 3,
+      "every_hours": 6
+    },
+    {
+      "name": "Remotive",
+      "type": "remotive",
+      "category": "software-dev",
+      "every_hours": 6
+    },
+    {
+      "name": "Arbeitnow",
+      "type": "arbeitnow",
+      "pages": 3,
+      "every_hours": 2
+    },
+    {
       "name": "Qualcomm",
       "type": "workday",
+      "enabled": false,
       "host": "qualcomm.wd5.myworkdayjobs.com",
       "tenant": "qualcomm",
       "site": "External",
-      "search": ["firmware", "embedded", "camera", "intern", "graduate"],
-      "pages": 3
-    },
-    {
-      "name": "Applied Intuition",
-      "type": "greenhouse_html",
-      "slug": "appliedintuition"
-    },
-    {
-      "name": "AMD",
-      "type": "workday",
-      "host": "REPLACE-ME.wd1.myworkdayjobs.com",
-      "tenant": "REPLACE-ME",
-      "site": "REPLACE-ME",
       "search": ["firmware", "embedded", "intern", "graduate"],
+      "locations": ["india"],
       "pages": 3
     }
   ]
