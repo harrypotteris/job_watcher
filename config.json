@@ -37,7 +37,7 @@
     { "name": "Arbeitnow", "type": "arbeitnow", "pages": 3, "every_hours": 2 },
 
     {
-      "name": "Qualcomm", "type": "workday", "host": "qualcomm.wd5.myworkdayjobs.com", "tenant": "qualcomm", "site": "External",
+      "name": "Qualcomm", "enabled": false, "type": "workday", "host": "qualcomm.wd5.myworkdayjobs.com", "tenant": "qualcomm", "site": "External",
       "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
@@ -52,7 +52,7 @@
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "AMD", "type": "workday", "host": "amd.wd1.myworkdayjobs.com", "tenant": "amd", "site": "External",
+      "name": "AMD", "enabled": false, "type": "workday", "host": "amd.wd1.myworkdayjobs.com", "tenant": "amd", "site": "External",
       "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
@@ -82,7 +82,7 @@
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "Dell", "type": "workday", "host": "dell.wd1.myworkdayjobs.com", "tenant": "dell", "site": "External",
+      "name": "Dell", "enabled": false, "type": "workday", "host": "dell.wd1.myworkdayjobs.com", "tenant": "dell", "site": "External",
       "search": ["embedded", "firmware", "software engineer", "graduate"], "pages": 3, "every_hours": 3,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
@@ -122,11 +122,11 @@
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "Anduril", "type": "greenhouse", "slug": "anduril", "every_hours": 2,
+      "name": "Anduril", "enabled": false, "type": "greenhouse", "slug": "anduril", "every_hours": 2,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "Applied Intuition", "type": "greenhouse", "slug": "appliedintuition", "every_hours": 2,
+      "name": "Applied Intuition", "enabled": false, "type": "greenhouse", "slug": "appliedintuition", "every_hours": 2,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
@@ -138,7 +138,7 @@
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
-      "name": "Postman", "type": "greenhouse", "slug": "postman", "every_hours": 2,
+      "name": "Postman", "enabled": false, "type": "greenhouse", "slug": "postman", "every_hours": 2,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
@@ -151,7 +151,7 @@
     },
 
     {
-      "name": "Atlassian", "type": "lever", "slug": "atlassian", "every_hours": 2,
+      "name": "Atlassian", "enabled": false, "type": "lever", "slug": "atlassian", "every_hours": 2,
       "locations": ["india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "noida", "gurgaon", "gurugram", "mumbai", "delhi"]
     },
     {
