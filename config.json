@@ -2,7 +2,7 @@
   "include": ["firmware", "embedded", "intern", "graduate", "new grad", "campus", "bsp", "driver", "uefi", "bios", "hardware", "validation"],
   "exclude": ["senior", "staff", "principal", "director", "manager", "lead"],
   "locations": ["india", "bengaluru", "bangalore", "hyderabad", "noida", "pune", "remote"],
-  "alert_on_first_run": true,
+  "alert_on_first_run": false,
   "sources": [
     {
       "name": "Qualcomm",
@@ -15,7 +15,7 @@
     },
     {
       "name": "Applied Intuition",
-      "type": "greenhouse",
+      "type": "greenhouse_html",
       "slug": "appliedintuition"
     },
     {
