@@ -312,6 +312,8 @@ def main():
     seeded = set(state.get("seeded", []))
     fresh_start = not seeded
     last_run = state.get("last_run", {})
+    prev_failing = set(state.get("failing", []))
+    failing = set()
     now = time.time()
     role_re = word_re(cfg["roles"])
     excl_re = word_re(cfg.get("exclude_title", []))
@@ -333,6 +335,7 @@ def main():
             jobs = fetch(src)
         except Exception as e:
             errors.append(f"{name}: {e}")
+            failing.add(name)
             continue
         last_run[name] = now
 
@@ -366,6 +369,9 @@ def main():
         notify([head] + shown + tail)
     for e in errors:
         print("ERROR", e)
+    newly_failing = [e for e in errors if e.split(":")[0] in failing - prev_failing]
+    if newly_failing:  # tell Telegram once when a source starts failing
+        notify(["⚠️ Sources failing:"] + newly_failing)
     if fresh_start:  # one-time ping so you know Telegram is wired up
         notify(["✅ Job watcher is live. Sources checked: "
                 + ", ".join(sorted(seeded)) + ". New matches will show up here."])
@@ -373,7 +379,8 @@ def main():
     if not DRY:
         SEEN_FILE.write_text(json.dumps(
             {"seen": list(seen)[-MAX_SEEN:], "seeded": sorted(seeded),
-             "last_run": last_run}, indent=1))
+             "last_run": last_run,
+             "failing": sorted(failing)}, indent=1))
 
 
 if __name__ == "__main__":
