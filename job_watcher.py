@@ -7,8 +7,10 @@ Env vars: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 Run:      python job_watcher.py            (normal)
           python job_watcher.py --dry-run  (print only, don't send/save)
 """
+import html as htmllib
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -77,8 +79,38 @@ def fetch_workday(src):
     return out
 
 
+def fetch_greenhouse_html(src):
+    """For Greenhouse boards where the public API says 'not found'.
+    Reads the public board page (job-boards.greenhouse.io/<slug>)."""
+    base = f"https://job-boards.greenhouse.io/{src['slug']}"
+    out, ids = [], set()
+    for page in range(1, src.get("pages", 10) + 1):
+        r = requests.get(base, params={"page": page}, headers=UA,
+                         timeout=TIMEOUT)
+        r.raise_for_status()
+        found = 0
+        for m in re.finditer(
+                r'<a[^>]+href="([^"]*/jobs/(\d+)[^"]*)"[^>]*>(.*?)</a>',
+                r.text, re.S):
+            href, jid, inner = m.groups()
+            if jid in ids:
+                continue
+            ids.add(jid)
+            found += 1
+            text = htmllib.unescape(re.sub(r"<[^>]+>", " ", inner))
+            text = re.sub(r"\s+", " ", text).strip()
+            url = href if href.startswith("http") \
+                else "https://job-boards.greenhouse.io" + href
+            # title text also contains the location; location filter is
+            # skipped for these (empty location)
+            out.append({"id": jid, "title": text, "location": "", "url": url})
+        if not found:
+            break
+    return out
+
+
 FETCHERS = {"greenhouse": fetch_greenhouse, "lever": fetch_lever,
-            "workday": fetch_workday}
+            "workday": fetch_workday, "greenhouse_html": fetch_greenhouse_html}
 
 
 # ---------- filtering ----------
